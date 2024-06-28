@@ -1,0 +1,46 @@
+---
+- name: task1
+  hosts: [debian]
+  become: true
+
+  tasks:
+  - name: Create a user 'brickdev' with a home directory
+    ansible.builtin.user:
+      name: brickdev
+      shell: /bin/bash
+      create_home: yes
+  
+  - name: Create a password for user 'brickdev'
+    ansible.builtin.user:
+      user: brickdev
+      password: "{{ 'pass' | password_hash('sha512') }}"
+
+  - name: Create a user 'cloudru' with a home directory
+    ansible.builtin.user:
+      name: cloudru
+      shell: /bin/bash
+      create_home: yes
+
+  - name: Set authorized key taken for user 'cloudru'
+    ansible.posix.authorized_key:
+      user: cloudru
+      state: present
+      key: "{{ lookup('file', './id_rsa_cloudru.pub') }}"
+
+  - name: Configure sshd service (Disable access root user by ssh and Enable remote access only by ssh keys)
+    lineinfile:
+      path: "/etc/ssh/sshd_config"
+      regex: "^(#)?{{item.key}}"
+      line: "{{item.key}} {{item.value}}"
+      state: present
+    loop:
+      - { key: "PermitRootLogin", value: "no" }
+      - { key: "PasswordAuthentication", value: "no" } 
+    notify:
+      - restart sshd
+
+  handlers:
+    - name: restart sshd
+      ansible.builtin.service:
+        name: sshd
+        state: restarted

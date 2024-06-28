@@ -1,0 +1,13 @@
+
+{
+    "name": "simple-node-app",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+      "start": "node app.js",
+      "start_compose": "node app_compose.js"
+    },
+    "dependencies": {
+      "dotenv": "^16.4.5"
+    }
+  }
