@@ -15,7 +15,7 @@ ansible-playbook --ask-pass --ask-become-pass playbook.yml
 Запуск контейнера осуществляется командой:
 
 ```tf
-docker run -d --rm -p 8000:8000 --env-file env_settings.env simple-node-app
+docker run -d --rm -p 8000:8000 --env-file env_docker.env simple-node-app
 ```
 Файл *env_docker.env* содержит переменные в соотвествии с заданием. 
 
