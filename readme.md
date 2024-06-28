@@ -21,7 +21,8 @@ docker run -d --rm -p 8000:8000 --env-file env_settings.env simple-node-app
 
 Результат задания на скриншоте ниже:
 
-![image](https://github.com/KirillJBee/brick.dev-devops-tasks/assets/77605315/1b38aee9-8ff2-47cd-bbbf-4bfaedfe12f4)
+![344176956-1b38aee9-8ff2-47cd-bbbf-4bfaedfe12f4](https://github.com/KirillJBee/brick.dev-devops-tasks/assets/77605315/9df234b0-1eff-46a5-971c-ac30f080842f)
+
 
 Запуск реплик осуществляется посредстовм команды:
 
@@ -32,9 +33,9 @@ docker stack deploy -c ./docker-compose.yml simple-node-app-dev
 
 Результат задания на скриншотах ниже:
 
-![image](https://github.com/KirillJBee/brick.dev-devops-tasks/assets/77605315/9149325f-a754-462c-8a1f-d695984255af)
-![image](https://github.com/KirillJBee/brick.dev-devops-tasks/assets/77605315/6590b2da-ce5f-4989-a03b-970b222f43d3)
-![image](https://github.com/KirillJBee/brick.dev-devops-tasks/assets/77605315/ba48cd5e-8940-4273-acfb-4be7381890e6)
+![344184377-9149325f-a754-462c-8a1f-d695984255af](https://github.com/KirillJBee/brick.dev-devops-tasks/assets/77605315/c159d623-a1df-4bed-b071-e6b5ebe30676)
+![344184654-6590b2da-ce5f-4989-a03b-970b222f43d3](https://github.com/KirillJBee/brick.dev-devops-tasks/assets/77605315/7a7840ce-92fb-4220-8257-ce2b6a52dcd8)
+![344184831-ba48cd5e-8940-4273-acfb-4be7381890e6](https://github.com/KirillJBee/brick.dev-devops-tasks/assets/77605315/ca64c776-86e0-47c4-b5b7-c9bf125c6aad)
 
 
 
